@@ -1,24 +1,25 @@
-# README
+[Demo on Heroku](https://fast-gallery.herokuapp.com/)
+## Description  
+Write an application that can find by url address page, parse it, drag images from it and form a gallery of that pictures. Plus it should have Rest API endpoint which receive url address and return array of image urls from received page. This functionality should be covered with tests. UI shou
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to start
 
-Things you may want to cover:
+`bundle install`  
+`rails db:create`  
+`rails s`
 
-* Ruby version
+## Endpoints
 
-* System dependencies
+### Return array of image urls from received page
+`CURL -X GET localhost:3000/images/index?link=https://www.google.com`    
+params:  
+?link=#{your url} 
 
-* Configuration
+Heroku url: https://fast-gallery.herokuapp.com//images/index?link=https://www.google.com
+### Show gallery of image urls from received page
+`CURL -X GET localhost:3000/images/show?link=https://www.google.com`  
 
-* Database creation
+params:  
+?link=#{your url}  
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Heroku url: https://fast-gallery.herokuapp.com//images/show?link=https://www.google.com
